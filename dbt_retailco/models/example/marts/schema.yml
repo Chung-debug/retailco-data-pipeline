@@ -1,0 +1,106 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_employees
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+      - name: store_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_stores')
+                field: store_id
+
+  - name: dim_stores
+    columns:
+      - name: store_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_payment_methods
+    columns:
+      - name: payment_method_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: employee_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_employees')
+                field: employee_id
+      - name: store_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_stores')
+                field: store_id
+
+  - name: fct_order_items
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_id
+      - name: product_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+
+  - name: fct_payments
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_id
+      - name: payment_method_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_payment_methods')
+                field: payment_method_id
