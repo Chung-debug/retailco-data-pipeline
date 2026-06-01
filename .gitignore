@@ -24,11 +24,14 @@ airflow_docker/config/airflow.cfg
 .vscode/
 .DS_Store
 Thumbs.db
+.sixth/
 
 # Database backups / local exports
 *.backup
 *.sql
-db_backups/
+!db_backups/lake.sql
+!db_backups/warehouse.sql
+db_backups/*.backup
 
 # Zip files / bundles
 *.zip
