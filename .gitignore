@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Airflow / Docker local runtime
+airflow_home/
+airflow_docker/logs/
+airflow_docker/config/airflow.cfg
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Database backups / local exports
+*.backup
+*.sql
+db_backups/
+
+# Zip files / bundles
+*.zip
