@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.*
+
+# Local runtime / generated files
+__pycache__/
+*.pyc
+dbt_retailco/target/
+dbt_retailco/logs/
+airflow_docker/logs/
+
+# Large local database backups
+*.sql
+*.backup
+*.zip
+db_backups/
+
+# Airflow runtime / generated files
+airflow_docker/config/airflow.cfg
+logs/
+airflow_docker/logs/
+
+.env
+target/.env.*
+dbt_packages/
+*.sql
+*.backup
+*.zip
+db_backups/

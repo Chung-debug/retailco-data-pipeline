@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: retailco_raw
+    database: warehouse
+    schema: raw
+    tables:
+      - name: stores
+      - name: employees
+      - name: payment_methods
+      - name: customers
+      - name: products
+      - name: orders
+      - name: order_items
+      - name: payments
+      - name: inventory_movements
