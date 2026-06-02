@@ -1,7 +1,0 @@
-pandas==3.0.3
-sqlalchemy==2.0.50
-psycopg2-binary==2.9.12
-python-dotenv==1.0.1
-dlt[postgres]
-dbt-core==1.11.11
-dbt-postgres==1.10.0
