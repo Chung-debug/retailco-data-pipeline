@@ -370,3 +370,7 @@ select * from analytics.fct_payments limit 10;
 ## Final note
 
 The core pipeline is complete through extraction, loading, and warehouse modelling. The orchestration layer has also been set up substantially with Airflow and Docker, and the DAG is now visible in the Airflow UI. The remaining work is mainly around stabilizing full runtime execution for the complete orchestrated flow.
+## Project Demo Video
+
+You can watch the full project walkthrough and demonstration here:
+**[Watch the Demo Video on Google Drive](https://drive.google.com/file/d/137LwiOwBIF-h9-mJrtKdJI4FaPDOC2hk/view?usp=sharing)**
