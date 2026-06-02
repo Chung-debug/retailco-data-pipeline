@@ -1,37 +1,29 @@
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
-env/
-
-# Secrets / environment
+# Secrets
 .env
 .env.*
-!.env.example
 
-# dbt
-target/
-dbt_packages/
-logs/
-
-# Airflow / Docker local runtime
-airflow_home/
+# Local runtime / generated files
+__pycache__/
+*.pyc
+dbt_retailco/target/
+dbt_retailco/logs/
 airflow_docker/logs/
-airflow_docker/config/airflow.cfg
 
-# Editor / OS
-.vscode/
-.DS_Store
-Thumbs.db
-.sixth/
-
-# Database backups / local exports
-*.backup
+# Large local database backups
 *.sql
-!db_backups/lake.sql
-!db_backups/warehouse.sql
-db_backups/*.backup
-
-# Zip files / bundles
+*.backup
 *.zip
+db_backups/
+
+# Airflow runtime / generated files
+airflow_docker/config/airflow.cfg
+logs/
+airflow_docker/logs/
+
+.env
+target/.env.*
+dbt_packages/
+*.sql
+*.backup
+*.zip
+db_backups/
